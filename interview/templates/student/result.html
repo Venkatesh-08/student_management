@@ -1,0 +1,47 @@
+{% extends 'student/base.html' %}
+
+{% block content %}
+  <h2>Result</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Grade</th>
+        <th>Number of Students</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>S</td>
+        <td>{{ s_grade_students }}</td>
+      </tr>
+      <tr>
+        <td>A</td>
+        <td>{{ a_grade_students }}</td>
+      </tr>
+      <tr>
+        <td>B</td>
+        <td>{{ b_grade_students }}</td>
+      </tr>
+      <tr>
+        <td>C</td>
+        <td>{{ c_grade_students }}</td>
+      </tr>
+      <tr>
+        <td>D</td>
+        <td>{{ d_grade_students }}</td>
+      </tr>
+      <tr>
+        <td>E</td>
+        <td>{{ e_grade_students }}</td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>{{ f_grade_count }}</td>
+      </tr>
+      <tr>
+        <td>Pass Percentage</td>
+        <td>{{ pass_percentage }}%</td>
+      </tr>
+    </tbody>
+  </table>
+{% endblock %}

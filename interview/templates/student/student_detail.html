@@ -1,0 +1,35 @@
+{% extends 'student/base.html' %}
+
+{% block content %}
+    <h1>{{ student.first_name }} {{ student.last_name }} Details</h1>
+    <ul>
+        <li>Name: {{ student.name }}</li>
+        <li>Roll Number: {{ student.roll_number }}</li>
+    </ul>
+
+    <h2>Marks</h2>
+    {% if student.mark_set.all %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Marks</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for mark in student.mark_set.all %}
+                    <tr>
+                        <td>{{ mark.subject }}</td>
+                        <td>{{ mark.marks }}</td>
+                        <td>{{ mark.grade }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No marks found for this student.</p>
+    {% endif %}
+
+    <a href="{% url 'student_list' %}">Back to student list</a>
+{% endblock %}

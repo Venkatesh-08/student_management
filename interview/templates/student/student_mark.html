@@ -1,0 +1,17 @@
+{% extends 'student/base.html' %}
+
+{% block content %}
+  <h1>{{ student.name }}'s Marks</h1>
+  <table>
+    <tr>
+      <th>Subject</th>
+      <th>Marks</th>
+    </tr>
+    {% for mark in student.mark_set.all %}
+    <tr>
+      <td>{{ mark.subject }}</td>
+      <td>{{ mark.marks }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
